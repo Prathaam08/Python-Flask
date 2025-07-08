@@ -10,5 +10,3 @@ def student_profile():
         is_Topper = True,
         subjects = ["Maths" , "Science" , "History"]
     )
-
-
