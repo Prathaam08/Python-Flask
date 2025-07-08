@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title%}My Feedback {% endblock%}</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #222;
+      color: #fff;
+      padding: 15px 20px;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin-right: 15px;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    footer {
+      background: grey;
+      text-align: center;
+      padding: 20px;
+      margin-top: 220px;
+      font-size: 0.85rem;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+  <body>
+    <header>
+      <h1>My Site</h1>
+      <nav>
+        <a href="/">Form </a>
+      </nav>
+    </header>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul style="color: green;">
+      {% for msg in messages%}
+      <li>{{msg}}</li>
+      {% endfor%}
+    </ul>
+    {% endif %} 
+    {% endwith %}
+    
+    
+    {% block content %} {% endblock %}
+
+    <footer>
+      <p>&copy; 2025 | Your feedback is valuable.</p>
+    </footer>
+  </body>
+</html>
