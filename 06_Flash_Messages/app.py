@@ -25,6 +25,3 @@ def thankyou():
 if __name__ == "__main__":
     app.run(debug=True)
 
-
-
-3.06
