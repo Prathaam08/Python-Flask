@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title%}Flask-WTF Form {% endblock%}</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+
+    footer {
+      background: grey;
+      text-align: center;
+      padding: 20px;
+      margin-top: 220px;
+      font-size: 0.85rem;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+  <body>
+    <h1>Flask-WTF Registration </h1>
+   
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+
+      {% for category , msg in messages%}
+      <p style="color: green;">{{msg}}</p>
+      {% endfor%}
+   
+    {% endif %} 
+    {% endwith %}
+    
+    
+    {% block content %} {% endblock %}
+
+    <footer>
+      <p>&copy; 2025 | Your feedback is valuable.</p>
+    </footer>
+  </body>
+</html>
